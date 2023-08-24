@@ -21,7 +21,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.apply {
             voteData.setOnClickListener {
-                uploadVote()
+                if (binding.getDataField.text!!.isNotEmpty()){
+                    uploadVote(binding.getDataField.text.toString())
+                }
+
             }
 
             getData.setOnClickListener {
@@ -33,8 +36,8 @@ class MainActivity : AppCompatActivity() {
 
     // ... UI setup and interaction ...
 
-    private fun uploadVote() {
-        viewModel.uploadVoting(Voter("300025546416488548", true))
+    private fun uploadVote(id: String) {
+        viewModel.uploadVoting(Voter(id, true))
     }
 
     private fun getVote() {

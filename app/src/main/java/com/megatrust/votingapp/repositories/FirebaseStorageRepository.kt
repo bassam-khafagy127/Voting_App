@@ -16,6 +16,11 @@ class FirebaseStorageRepository @Inject constructor(
        firebaseFireStore.collection("Voters")
            .add(voterMap)
            .addOnSuccessListener {
+               Log.d("Tagg","DocumentSnapshot added with ID: ${it.id}")
+
+           }
+           .addOnFailureListener {
+               Log.w("Tagg", "Error adding document", it)
 
            }
    }
@@ -31,7 +36,7 @@ class FirebaseStorageRepository @Inject constructor(
             }
             .addOnFailureListener { exception ->
                 // Handle error
-                Log.d("Tagg","${exception.stackTrace}")
+                Log.d("Tagg","${exception.message}")
 
             }
     }
