@@ -1,13 +1,13 @@
 package com.megatrust.votingapp.di
 
+import android.content.Context
+import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
 import com.megatrust.votingapp.repositories.FirebaseStorageRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -22,7 +22,10 @@ object AppModule {
         return FirebaseStorageRepository(storage)
     }
 
-     @Provides
+    @Provides
     @Singleton
-    fun provideFireStoreDataBase() = FirebaseFirestore.getInstance()
+    fun provideFireStoreDataBase(@ApplicationContext appContext: Context): FirebaseFirestore {
+        FirebaseApp.initializeApp(appContext) // Initialize Firebase
+        return FirebaseFirestore.getInstance()
+    }
 }
