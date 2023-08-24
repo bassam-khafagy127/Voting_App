@@ -30,8 +30,18 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
 
             queryButton.setOnClickListener {
-                val id = binding.idET.text?.trim().toString()
-                viewModel.checkIfISVoteBefore(id)
+                if (binding.idET.text?.trim().toString()
+                        .isNotEmpty() && binding.idET.text?.length == 14
+                ) {
+                    viewModel.checkIfISVoteBefore(binding.idET.text?.trim().toString())
+                } else {
+                    Toast.makeText(
+                        applicationContext,
+                        "${resources.getString(R.string.id)} لا يمكن ان يبقي فارغا او اقل من 13 رقما ",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
             }
         }
 
