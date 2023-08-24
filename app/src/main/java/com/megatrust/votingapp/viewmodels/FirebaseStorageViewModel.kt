@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.megatrust.votingapp.data.Voter
 import com.megatrust.votingapp.repositories.FirebaseStorageRepository
+import com.megatrust.votingapp.utills.Vote
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -12,15 +13,22 @@ import javax.inject.Inject
 class FirebaseStorageViewModel @Inject constructor(private val repository: FirebaseStorageRepository) :
     ViewModel() {
 
-    private val _uploadStatus = MutableLiveData<Boolean>()
-    val uploadStatus: LiveData<Boolean> = _uploadStatus
+    private val _existStatus = MutableLiveData<Vote>()
+    val existStatus: LiveData<Vote> = _existStatus
 
-    fun uploadVoting(voter: Voter) {
-        repository.uploadVoting(voter)
+    fun checkIfISVoteBefore(id: String) {
+        repository.checkIfVoteBefore(id) {
+            if (it) {
+                // Document exists
+                // Do something
+                _existStatus.value = Vote.EXIST
+
+            } else {
+                // Document does not exist
+                // Do something else
+                _existStatus.value = Vote.NOT_EXIST
+
+            }
+        }
     }
-
-    fun getVote() {
-       repository.getVote()
-    }
-
 }

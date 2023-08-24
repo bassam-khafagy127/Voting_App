@@ -12,39 +12,126 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appLogo"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_app_logo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/officialSiteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/tajawal_extrabold"
+            android:text="@string/offical_site"
+            android:textColor="@color/hintTextColor"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/appLogo"
+            app:layout_constraintTop_toTopOf="@id/appLogo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nationalElectionCommission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/tajawal_extrabold"
+            android:text="@string/nationalElectionCommission"
+            android:textColor="@color/goldenTextColor"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/appLogo"
+            app:layout_constraintTop_toBottomOf="@id/officialSiteTv" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header_CL"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="26dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/nationalElectionCommission">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/queryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginVertical="24dp"
+            android:fontFamily="@font/tajawal_extrabold"
+            android:gravity="center"
+            android:text="@string/queryForVoting"
+            android:textColor="@color/redTextColor"
+            android:textSize="32sp"
+            app:layout_constraintTop_toBottomOf="@id/header_CL" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/foQueryET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/tajawal_medium"
+            android:gravity="center"
+            android:text="@string/forQuery"
+            android:textColor="@color/blackTextColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/queryEditText" />
+
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/getDataField"
+            android:id="@+id/id_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint=""
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="24dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/tajawal_medium"
+            android:hint="@string/id_hint"
+            android:inputType="number"
+            android:maxLength="14"
+            android:maxLines="1"
+            android:minHeight="50dp"
+            android:paddingHorizontal="16dp"
+            android:textColorHint="@color/hintTextColor"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/foQueryET" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/getData"
-            android:layout_width="match_parent"
+            android:id="@+id/queryButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="getData"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_red_btn_2dp"
+            android:fontFamily="@font/tajawal_extrabold"
+            android:paddingHorizontal="40dp"
+            android:text="@string/queryNow"
+            android:textColor="@color/whiteTextColor"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.61" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/voteData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="vote"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.773" />
-
+            app:layout_constraintTop_toBottomOf="@id/id_ET" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

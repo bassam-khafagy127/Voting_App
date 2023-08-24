@@ -3,41 +3,38 @@ package com.megatrust.votingapp.repositories
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.megatrust.votingapp.data.Voter
+import com.megatrust.votingapp.utills.Constant.VOTERS_COLLECTION
+import com.megatrust.votingapp.utills.Constant.VOTERS_ID
+import com.megatrust.votingapp.utills.Constant.VOTERS_STATE
+import com.megatrust.votingapp.utills.Vote
 import javax.inject.Inject
 
 class FirebaseStorageRepository @Inject constructor(
     private val firebaseFireStore: FirebaseFirestore
 ) {
-   fun uploadVoting(voter: Voter){
-       val voterMap = mapOf(
-           "stringValue" to voter.stringValue,
-           "booleanValue" to voter.booleanValue
-       )
-       firebaseFireStore.collection("Voters")
-           .add(voterMap)
-           .addOnSuccessListener {
-               Log.d("Tagg","DocumentSnapshot added with ID: ${it.id}")
 
-           }
-           .addOnFailureListener {
-               Log.w("Tagg", "Error adding document", it)
-
-           }
-   }
-    fun getVote(){
-        firebaseFireStore.collection("Voters").get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val stringValue = document.getString("stringValue")
-                    val booleanValue = document.getBoolean("booleanValue")
-                    // Process the data
-                    Log.d("Tagg","${document.data}")
+    fun checkIfVoteBefore(id: String, callback: (Boolean) -> Unit) {
+        firebaseFireStore.collection(VOTERS_COLLECTION).whereEqualTo(VOTERS_ID, id)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val querySnapshot = task.result
+                    if (querySnapshot != null && !querySnapshot.isEmpty) {
+                        // Document with the specific string value exists
+                        callback(true)
+                    } else {
+                        // Document with the specific string value does not exist
+                        callback(false)
+                    }
+                } else {
+                    // Handle errors
+                    val exception = task.exception
+                    // ...
+                    callback(false) // Return false in case of an error
                 }
             }
-            .addOnFailureListener { exception ->
-                // Handle error
-                Log.d("Tagg","${exception.message}")
-
-            }
     }
+
+
+
 }

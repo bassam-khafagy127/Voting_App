@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "65902134721",
+    "project_id": "voting-app-ef3e5",
+    "storage_bucket": "voting-app-ef3e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65902134721:android:0df58f308013efc0fb1b40",
+        "android_client_info": {
+          "package_name": "com.megatrust.votingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65902134721-pq0c9ecqtjj4vlkprragqkt1217f39i5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD--t5LpgOaVw-vYG-bOZ3xcMeeiGh4Scc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65902134721-pq0c9ecqtjj4vlkprragqkt1217f39i5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

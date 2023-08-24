@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Voting App</string>
+    <string name="app_name" translatable="false">Voting App</string>
+    <string name="offical_site" translatable="false">الموقع الرسمي</string>
+    <string name="nationalElectionCommission" translatable="false">الهيئة الوطنية للانتخابات</string>
+    <string name="queryForVoting" translatable="false">استعلم عن تصويت ناخب</string>
+    <string name="forQuery" translatable="false">للاستعلام عن الحالة الانتخابية،أدخل الرقم القومي المكون من 14 رقما</string>
+    <string name="id_hint" translatable="false">ادخل الرقم القومي المكون من 14 رقما</string>
+    <string name="queryNow" translatable="false">استعلم</string>
+    <string name="dummyFalsMessage" translatable="false">الرقم القومي (29309282402963) لم يقم بالتصويت من قبل</string>
+    <string name="dummyTrue" translatable="false">الرقم القومي (29309282402963) قام بالتصويت</string>
+    <string name="id" translatable="false">الرقم القومي</string>
+    <string name="eventNeverVotedBefore" translatable="false">لم يقم بالتصويت من قبل</string>
+
+    <string name="eventVotedBefore" translatable="false">قام بالتصويت</string>
+    <string name="ok" translatable="false">حسنا</string>
 </resources>
