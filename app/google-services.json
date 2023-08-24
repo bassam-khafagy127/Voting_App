@@ -7,36 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:65902134721:android:eeecab7e12f5ab60fb1b40",
-        "android_client_info": {
-          "package_name": "com.bassamkhafagy.demochatgpt"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "65902134721-pq0c9ecqtjj4vlkprragqkt1217f39i5.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyD--t5LpgOaVw-vYG-bOZ3xcMeeiGh4Scc"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "65902134721-pq0c9ecqtjj4vlkprragqkt1217f39i5.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:65902134721:android:6460cafdce603d90fb1b40",
+        "mobilesdk_app_id": "1:65902134721:android:0df58f308013efc0fb1b40",
         "android_client_info": {
           "package_name": "com.megatrust.votingapp"
         }

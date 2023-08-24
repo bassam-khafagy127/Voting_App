@@ -17,17 +17,6 @@ class FirebaseStorageViewModel @Inject constructor(private val repository: Fireb
     private val _uploadStatus = MutableLiveData<Boolean>()
     val uploadStatus: LiveData<Boolean> = _uploadStatus
 
-    fun uploadData(voter: Voter) {
-        viewModelScope.launch {
-            try {
-                repository.uploadData(voter)
-                _uploadStatus.value = true
-            } catch (e: Exception) {
-                _uploadStatus.value = false
-            }
-        }
 
-    }
-    fun getVoters() = repository.getUser()
 
 }

@@ -18,30 +18,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        uploadData()
 
-
-        Toast.makeText(
-            applicationContext,
-            viewModel.getVoters().stringValue,
-            Toast.LENGTH_LONG
-        ).show()
     }
 
     // ... UI setup and interaction ...
 
     private fun uploadData() {
-        val data = Voter("300021252145223296", true)
-        viewModel.uploadData(data)
-        viewModel.uploadStatus.observe(this) { success ->
-            if (success) {
-                // Data uploaded successfully
-//                Toast.makeText(applicationContext, "Success", Toast.LENGTH_LONG).show()
-            } else {
-                // Error uploading data
-//                Toast.makeText(applicationContext, "Error", Toast.LENGTH_LONG).show()
 
-            }
-        }
     }
 }
